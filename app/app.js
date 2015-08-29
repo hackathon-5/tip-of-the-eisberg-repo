@@ -6,6 +6,10 @@
           templateUrl: "common/views/login.html",
           controller: "MainCtrl as main"
         })
+        .when ('/listing', {
+          templateUrl: "views/map-listing.html",
+          controller: "mapCtrl as map"
+        })
         .otherwise({
           redirectTo: '/not-found'
         });
@@ -21,4 +25,5 @@
 
 }(angular.module("hackathon5", [
     'ngRoute',
+    'uiGmapgoogle-maps'
 ])));
