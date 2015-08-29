@@ -8,7 +8,7 @@
         })
         .when ('/listing', {
           templateUrl: "views/map-listing.html",
-          controller: "mapCtrl as map"
+          controller: "MapCtrl"
         })
         .otherwise({
           redirectTo: '/not-found'

@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
 
+ 
+
+
   </head>
   <body>
 
@@ -27,20 +30,26 @@
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
-    <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMJ6IbVAcrDZacINdZLHNAt2XmN-nplcU"
+  type="text/javascript"></script>
+
 
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
+     <script src="bower_components/lodash/lodash.js"></script>
     <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
-    <script src="bower_components/lodash/lodash.js"></script>
+   
+
+
     <!-- endbower -->
     <!-- endbuild -->
 
         <!-- build:js app.js -->
         <script src="app.js"></script>
         <script src="controllers/loginCtrl.js"></script>
+        <script src="controllers/mapCtrl.js"></script>
         <!-- endbuild -->
 </body>
 </html>
