@@ -2,6 +2,7 @@
 
 <ul>
   <li ng-repeat='tasks in tasks.taskData'>
-    {{data.name}}
+    <input type="checkbox" id="taskName" label="{{tasks.name}}">
+    <label for="taskName">{{tasks.name}}</label>
   </li>
 </ul>
