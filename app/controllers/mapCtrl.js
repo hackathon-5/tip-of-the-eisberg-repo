@@ -182,5 +182,6 @@
       $(e.currentTarget).parent('.slide-out').removeClass('open');
     });
 
+
   })
 })();
