@@ -1,11 +1,13 @@
 (function () {
   angular.module("hackathon5")
+
     .controller("MapCtrl", function ($scope, $http, ListingService, TaskService, $animate, $timeout, $mdSidenav, $mdUtil, $log) {
 
     var mapCtrl = this;
 
     ListingService.getListings().success(function(data){
       mapCtrl.listings = data;
+      console.log(data)
       for ( var i = 0; i < mapCtrl.listings.length; i++ ) {
         mapCtrl.listings[i].coords = {
           latitude: mapCtrl.listings[i].Lat,
@@ -38,6 +40,28 @@
         icon:'../images/location-marker.png'
       }
     }
+
+
+
+
+
+  $scope.markersEvents = {
+    click: function (gMarker, eventName, model) {
+      if(model.$id){
+        model = model.coords;//use scope portion then
+
+
+      }
+      // alert("Model: event:" + eventName + " " + JSON.stringify(model));
+      var cardId = this.model._id
+      console.log(cardId)
+      console.log($('[data-id='+cardId+']'))
+
+      $('html, body').animate({
+        scrollTop: $('[data-id='+cardId+']').offset().top
+      }, 1000);
+    }
+  };
 
 
     $scope.mapOptions = {
@@ -163,6 +187,9 @@
     $scope.options = {
        styles: styleArray
     };
+    
+
+
 
     $scope.windowOptions = {
         visible: true

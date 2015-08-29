@@ -1,6 +1,13 @@
 $color-main: #3F00FF;
 $color-green: #45B29D;
 $bg-color-main: #DF5A49;
+$accent-green: #C1E8DA;
+$accent-light: #C96868;
+$brown: #5E4949;
+$purple: #866770;
+$road-purple: #9c7f88;
+$gray: #f4f4f4;
+$water-green: #b1ddd9;
 
 body {
   -webkit-font-smoothing: antialiased;
@@ -9,11 +16,7 @@ body {
   font-size: 14px;
 }
 
-/////COLORS
-$accent-green: #C1E8DA;
-$accent-light: #B0DDD9;
-$brown: #5E4949;
-$purple: #866770;
+
 
 .angular-google-map-container {
   width: 100%;
@@ -81,6 +84,17 @@ a.md-button.md-fab, .md-button.md-fab {
   font-style: italic;
 }
 
+   .marker-label {
+     color: red;
+     background-color: white;
+     font-family: "Lucida Grande", "Arial", sans-serif;
+     font-size: 10px;
+     font-weight: bold;
+     text-align: center;
+     width: 40px;     
+     border: 2px solid black;
+     white-space: nowrap;
+   }
 .bg-color-main {
   background-color: $purple;
 }
@@ -102,6 +116,9 @@ a.md-button.md-fab, .md-button.md-fab {
   width: 20%;
 }
 
+.gmnoprint {
+    display: none;
+  }
 
 md-card.slide-out {
   position: fixed;
