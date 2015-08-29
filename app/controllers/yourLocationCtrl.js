@@ -5,7 +5,7 @@
 
 
   angular.module("hackathon5")
-    .controller("yourLocationCtrl", function (LocationService, $scope, $location, $routeParams) {
+    .controller("YourLocationCtrl", function (LocationService, $scope, $location, $routeParams) {
       var yourLocation = this;
 
       LocationService.getCity().success(function(data) {
