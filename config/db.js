@@ -26,13 +26,3 @@ db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function (callback) {
   console.log('db connected');
 })
-
-// Create badge schema - empty object so it is
-// truly schemaless and not enforced
-var listingSchema = mongoose.Schema({});
-
-exports.Listing = mongoose.model('Listing', listingSchema, 'listings');
-
-var taskSchema = mongoose.Schema({});
-
-exports.Task = mongoose.model('Task', taskSchema, 'tasks');

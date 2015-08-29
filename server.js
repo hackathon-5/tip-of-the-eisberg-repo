@@ -14,6 +14,7 @@ var morgan = require('morgan'),
     session = require('express-session');
 
 var Listing = require('./models/listing').Listing;
+var Listing = require('./models/task').Task;
 var User = require('./models/user');
 
 
@@ -109,3 +110,15 @@ router.route('/users')
       }
     });
   })
+
+  // BADGE API ROUTES
+  router.route('/tasks')
+    .get(function(req, res) {
+      Task.find({}, function(err, data) {
+        if (err) {
+          res.send(err);
+        } else {
+          res.json(data);
+        }
+      });
+    })
