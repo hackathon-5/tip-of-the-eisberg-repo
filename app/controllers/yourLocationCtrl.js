@@ -5,9 +5,13 @@
 
 
   angular.module("hackathon5")
-    .controller("yourLocationCtrl", function ($scope, $location, $routeParams) {
-      var main = this;
+    .controller("yourLocationCtrl", function (LocationService, $scope, $location, $routeParams) {
+      var yourLocation = this;
 
-      main.notFound = "We're sorry, but the page you requested is not found."
+      LocationService.getCity().success(function(data) {
+        yourLocation.cityData = data;
+      })
+
+      $scope.notFound = "We're sorry, but the page you requested is not found."
   });
 })();
