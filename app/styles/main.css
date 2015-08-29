@@ -26,16 +26,37 @@ section {
 .full-width {
   width: 100%; }
 
+.remove-padding {
+  padding: 0; }
+
 .header-text {
   text-align: center;
   font-size: 4em;
   margin: 0;
-  padding-top: 10%;
   color: #45B29D; }
 
 .login-header {
   z-index: 99999;
   position: relative; }
+
+.yupNope {
+  margin-bottom: 5%;
+  background-color: rgba(69, 178, 157, 0.7);
+  color: white;
+  height: 20vh;
+  border: none;
+  z-index: 99999;
+  display: block;
+  position: relative;
+  bottom: 2%;
+  width: 50%;
+  margin: 0 25%; }
+  .yupNope:hover {
+    background-color: #45B29D;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease; }
 
 a {
   text-decoration: none; }
