@@ -3,7 +3,7 @@
     app.config(function ($routeProvider) {
       $routeProvider
         .when('/', {
-          templateUrl: "common/views/main.html",
+          templateUrl: "common/views/login.html",
           controller: "MainCtrl as main"
         })
         .otherwise({
