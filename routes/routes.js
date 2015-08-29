@@ -7,12 +7,16 @@ module.exports = function (app, passport) {
       res.render('index.ejs')
     });
 
+    app.get('/map', function(req, res){
+      res
+    })
+
     // LOGIN
     app.get('/login', function(req, res) {
       // render page and pass in flash data if it exists
       res.render('login.ejs', { message: req.flash('loginMessage') });
     });
-    
+
     // // process the login form
     // app.post('/login', passport.authenticate('local-login', {
     //     successRedirect : '/profile', // redirect to the secure profile section
@@ -34,19 +38,19 @@ module.exports = function (app, passport) {
     // }));
     //
     //
-    // // PROFILE SECTION
-    // // we want this protected -- you have to login to view
-    // // use route middleware to verify this (isLoggedIn)
-    // app.get('/profile', isLoggedIn, function(req, res) {
-    //   res.render('profile.ejs', {
-    //     user: req.user         // Gets the user out of the session and passes to template
-    //   })
-    // });
+    // PROFILE SECTION
+    // we want this protected -- you have to login to view
+    // use route middleware to verify this (isLoggedIn)
+    app.get('/profile', isLoggedIn, function(req, res) {
+      res.render('profile.ejs', {
+        user: req.user         // Gets the user out of the session and passes to template
+      })
+    });
 
 
     // FACEBOOK
     //// route for FB authentication and login
-    app.get('/auth/facebook', passport.authenticate('facebook', { scope: ["user_events"] }));
+    app.get('/auth/facebook', passport.authenticate('facebook'));
 
     //// handle the callback after facebook has authenticated the user
     app.get('/auth/facebook/callback',

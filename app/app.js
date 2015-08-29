@@ -1,30 +1,29 @@
-angular.module("hackathon5", [
-    'ngRoute',
-]).config(function ($routeProvider) {
+(function(app) {
+
+    app.config(function ($routeProvider) {
       $routeProvider
         .when('/', {
-          templateUrl: "views/main.html",
-          controller: "AppCtrl as appCtrl"
-        })
-        .when('/listings', {
-          templateUrl: "views/listings.html",
-          controller: "ListingCtrl as listCtrl"
-        })
-        .when('/login', {
           templateUrl: "views/login.html",
           controller: "LoginCtrl as login"
         })
+        .when ('/listing', {
+          templateUrl: "views/map-listing.html",
+          controller: "MapCtrl as mapCtrl"
+        })
         .otherwise({
           redirectTo: '/not-found'
-        })
-  })
-  .controller('AppCtrl', ['ListingService', '$scope', '$http',
-    function(ListingService, $scope, $http) {
+        });
+    });
 
-      var appCtrl = this;
+    // .constant('_', _); //infusing underscore library
 
-      ListingService.getListings().success(function(data){
-        appCtrl.listings = data;
-      });
+    app.run(function ( ) {});
 
-  }]);
+    app.controller('AppController', function ($scope) {
+
+    });
+
+}(angular.module("hackathon5", [
+    'ngRoute',
+    'uiGmapgoogle-maps'
+])));

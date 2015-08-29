@@ -4,8 +4,4 @@ angular.module("hackathon5")
 
       var listCtrl = this;
 
-      ListingService.getListings().success(function(data){
-        listCtrl.listings = data;
-      });
-
   }]);
