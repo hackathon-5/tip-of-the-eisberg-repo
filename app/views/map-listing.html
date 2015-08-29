@@ -1,7 +1,6 @@
 
 <ui-gmap-google-map center='map.center' zoom='map.zoom' options="mapOptions" styles="options.styles">
   <ui-gmap-markers models="mapCtrl.listings"
-                   doClust="true"
                    coords="'coords'"
                    icon="'icon'"
                    options="markers.options"
@@ -12,8 +11,8 @@
   </ui-gmap-markers>
 </ui-gmap-google-map>
 
-<div class="bg-color-main">
-  <md-content class="md-padding">
+<div class="">
+  <md-content class="md-padding bg-color-main">
      <md-card class="md-card md-whiteframe-z2 bg-white" ng-repeat="listing in mapCtrl.listings">
        <md-card-content>
          <h2 class="md-title">{{listing.Title}} <span class="price">${{listing.Price}} / night</span></h2>
@@ -24,6 +23,9 @@
            {{listing.S_PropType}} - {{listing.ShortDesc}}
          </p>
          <div class="barter-box">
+           <md-button ng-click="showCustomToast()">
+             Show Custom
+           </md-button>
           <h3>Barters accepted:</h3>
           <div layout="row" class="mbs">
             <div class="barter-task" ng-repeat="task in mapCtrl.tasks" flex="20" ng-if="$index < 5">
