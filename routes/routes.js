@@ -2,10 +2,10 @@
 
 module.exports = function (app, passport) {
 
-    // HOME PAGE
-    // app.get('/', function(req, res) {
-    //   res.render('index.ejs')
-    // });
+    //HOME PAGE
+    app.get('/fb', function(req, res) {
+      res.render('index.ejs')
+    });
 
     // LOGIN
     app.get('/login', function(req, res) {
