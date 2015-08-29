@@ -12,9 +12,16 @@ angular.module('hackathon5')
         return $http.get( url + '/listing/' + listingId );
       };
 
+      var editListing = function(listing) {
+        $http.put( url + listing._id, listing ).then(function(res) {
+          $location.path('/listing')
+        });
+      };
+
       return {
         getListings: getAllListings,
-        getListing: getSingleListing
+        getListing: getSingleListing,
+        editListing: editListing
       };
 
   }]);

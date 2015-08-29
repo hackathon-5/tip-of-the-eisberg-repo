@@ -1,6 +1,7 @@
 
 <ui-gmap-google-map center='map.center' zoom='map.zoom' options="mapOptions" styles="options.styles">
   <ui-gmap-markers models="mapCtrl.listings"
+                   idKey="_id"
                    coords="'coords'"
                    icon="'icon'"
                    options="markers.options"
@@ -11,22 +12,24 @@
   </ui-gmap-markers>
 </ui-gmap-google-map>
 
+<md-button class="md-fab to-the-top-button">
+    <i class="material-icons">keyboard_arrow_up</i>
+</md-button>
+
 <div class="">
   <md-content class="md-padding bg-color-main">
      <md-card class="md-card md-whiteframe-z2 bg-white" ng-repeat="listing in mapCtrl.listings">
-       <md-card-content>
-         <h2 class="md-title">{{listing.Title}} <span class="price">${{listing.Price}} / night</span></h2>
+
+       <md-card-content data-id="{{listing._id}}">
+         <h3 class="md-title">{{listing.Title}} <span class="price">${{listing.Price}} / night</span></h3>
          <p ng-show="listing.P_Weekly != 'Not Found'">
-           Week: <span>{{listing.P_Weekly}}</span>
+           Week: <span class="price">{{listing.P_Weekly}}</span>
          </p>
          <p>
            {{listing.S_PropType}} - {{listing.ShortDesc}}
          </p>
          <div class="barter-box">
-           <md-button ng-click="showCustomToast()">
-             Show Custom
-           </md-button>
-          <h3>Barters accepted:</h3>
+          <h4>Barters accepted:</h4>
           <div layout="row" class="mbs">
             <div class="barter-task" ng-repeat="task in mapCtrl.tasks" flex="20" ng-if="$index < 5">
               <i class="material-icons color-green">done</i><br/><small>{{task.name}}</small>
@@ -39,6 +42,26 @@
           </div>
          </div>
        </md-card-content>
+       <md-button class="slide-out-toggler">
+        Open reviews
+       </md-button>
+         <md-card class="slide-out">
+           <div class="close-button-wrapper">
+             <md-button class="md-fab">
+               <i class="material-icons">clear</i>
+             </md-button>
+           </div>
+           <div class="slide-out-wrapper">
+             <h3>{{listing.Title}}</h3>
+             <md-card class="mbs" >
+               <img src="../images/charleston-house.jpg" alt="Sweet pic" />
+             </md-card>
+             <p>
+               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+             </p>
+           </div>
+         </md-card>
      </md-card>
    </md-content>
+
 </div>

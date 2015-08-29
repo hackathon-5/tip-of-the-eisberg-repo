@@ -1,6 +1,6 @@
 (function () {
   angular.module("hackathon5")
-    .controller("MapCtrl", function ($scope, ListingService, TaskService, $mdToast, $animate) {
+    .controller("MapCtrl", function ($scope, $http, ListingService, TaskService, $animate, $timeout, $mdSidenav, $mdUtil, $log) {
 
     var mapCtrl = this;
 
@@ -12,10 +12,16 @@
           longitude: mapCtrl.listings[i].Long
         }
         mapCtrl.listings[i].id = mapCtrl.listings[i]._id;
+        // var url = 'https://maps.googleapis.com/maps/api/geocode/json?latlng='+ mapCtrl.listings[i].coords.latitude.toFixed(5) + ',' + mapCtrl.listings[i].coords.longitude.toFixed(5) +'&key=AIzaSyD5gXzrEw5mXzak8wI95MSrHc9EYuNCz_E';
+        // $http.get(url).success(function(data){
+        //     console.log(data);
+        //     mapCtrl.listings[i].address = data.results[0].address_components;
+        //     ListingService.editListing(mapCtrl.listings[i]);
+        // });
       }
     });
 
-    TaskService.getAllTasks().success(function(data) {
+    TaskService.getTasks().success(function(data) {
       mapCtrl.tasks = data;
     });
 
@@ -161,5 +167,21 @@
     $scope.windowOptions = {
         visible: true
     };
+
+    // TO THE TOP BUTTON
+    $('body').on('click', '.to-the-top-button', function(e) {
+      $("html, body").animate({ scrollTop: "0px" });
+    });
+
+    // SLIDE OUT HANDLEER
+    $('body').on('click', '.slide-out-toggler', function(e) {
+      $('.slide-out').removeClass('open')
+     $(e.currentTarget).parent('md-card').find('.slide-out').addClass('open');
+    })
+    $('body').on('click', '.close-button-wrapper', function(e) {
+      $(e.currentTarget).parent('.slide-out').removeClass('open');
+    });
+
+
   })
 })();

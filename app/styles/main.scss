@@ -5,13 +5,13 @@ $bg-color-main: #DF5A49;
 body {
   -webkit-font-smoothing: antialiased;
   position: relative;
-  color: lighten(black, 30%);
+  color: lighten(black, 40%);
   font-size: 14px;
 }
 
 /////COLORS
 $accent-green: #C1E8DA;
-$accent-light: #C96868;
+$accent-light: #B0DDD9;
 $brown: #5E4949;
 $purple: #866770;
 
@@ -30,9 +30,55 @@ $purple: #866770;
    border: 2px solid black;
    white-space: nowrap;
 }
+md-content {
+  color: rgba(0,0,0, .6);
+}
+
+md-card {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+md-card md-card-content {
+  padding: 30px;
+  .md-title {
+    margin-top: 0;
+  }
+}
+
+.search-bar {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background-color: rgba(255,255,255, .8);
+  padding: 20px;
+  input {
+    width: 300px;
+  }
+}
+
+.to-the-top-button {
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  padding-top: 4px;
+}
+
+a.md-button.md-fab, .md-button.md-fab {
+  background-color: $accent-light;
+  &:hover {
+    background-color: darken($accent-light, 10%);
+  }
+}
 
 .container {
-  max-width: 88%;
+  max-width: 80%;
+}
+
+.price {
+  color: lighten(black, 60% );
+  font-style: italic;
 }
 
 .bg-color-main {
@@ -54,4 +100,47 @@ $purple: #866770;
 .barter-task {
   text-align: center;
   width: 20%;
+}
+
+
+md-card.slide-out {
+  position: fixed;
+  margin-left: 0;
+  margin-top: 0;
+  top: 0px;
+  left: 0px;
+  transform: translateX(-1000px);
+  max-width: 400px;
+  width: 100%;
+  height: 100%;
+  transition: transform .3s ease-out;
+  background-color: rgba(255,255,255, .9);
+  z-index:10000;
+  h3 {
+    text-align: center;
+  }
+  &.open {
+    transform: translateX(0);
+  }
+  .slide-out-wrapper {
+    padding: 20px;
+    padding-top: 60px;
+  }
+  .close-button-wrapper {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    md-button.md-fab {
+      padding-top: 10px;
+    }
+  }
+}
+
+.color-yellow {
+  color: goldenrod;
+}
+
+.md-button.md-fab {
+  padding-top: 6px;
 }
