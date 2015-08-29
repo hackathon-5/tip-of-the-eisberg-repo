@@ -15,7 +15,7 @@
       }
     });
 
-    TaskService.getAllTasks().success(function(data) {
+    TaskService.getTasks().success(function(data) {
       mapCtrl.tasks = data;
     });
 
