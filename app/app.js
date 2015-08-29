@@ -8,7 +8,11 @@
         })
         .when('/your-location', {
           templateUrl: "views/your-location.html",
-          controller: "yourLocationCtrl as yourLocation"
+          controller: "YourLocationCtrl as yourLocation"
+        })
+        .when ('/tasks', {
+          templateUrl: "views/tasks.html",
+          controller: "TaskCtrl as tasks"
         })
         .when ('/listing', {
           templateUrl: "views/map-listing.html",

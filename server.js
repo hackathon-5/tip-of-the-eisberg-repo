@@ -14,7 +14,7 @@ var morgan = require('morgan'),
     session = require('express-session');
 
 var Listing = require('./models/listing').Listing;
-var Listing = require('./models/task').Task;
+var Task = require('./models/task').Task;
 var User = require('./models/user');
 
 
