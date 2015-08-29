@@ -14,6 +14,7 @@ var morgan = require('morgan'),
     session = require('express-session');
 
 var Listing = require('./models/listing').Listing;
+var Task = require('./models/task').Task;
 var User = require('./models/user');
 
 
@@ -59,7 +60,7 @@ router.get('/', function(req, res) {
     res.json({ message: 'hooray! welcome to our api!' });
 });
 
-// BADGE API ROUTES
+// LISTINGS API ROUTES
 router.route('/listings')
   .get(function(req, res) {
     Listing.find({}, function(err, data) {
@@ -98,7 +99,7 @@ router.route('/listings/:listing_id')
     // STUBBED
   })
 
-// BADGE API ROUTES
+// USER API ROUTES
 router.route('/users')
   .get(function(req, res) {
     User.find({}, function(err, data) {
@@ -109,3 +110,15 @@ router.route('/users')
       }
     });
   })
+
+  // BADGE API ROUTES
+  router.route('/tasks')
+    .get(function(req, res) {
+      Task.find({}, function(err, data) {
+        if (err) {
+          res.send(err);
+        } else {
+          res.json(data);
+        }
+      });
+    })

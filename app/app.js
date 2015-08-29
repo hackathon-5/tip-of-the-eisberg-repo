@@ -6,9 +6,17 @@
           templateUrl: "views/login.html",
           controller: "LoginCtrl as login"
         })
+        .when('/your-location', {
+          templateUrl: "views/your-location.html",
+          controller: "YourLocationCtrl as yourLocation"
+        })
+        .when ('/tasks', {
+          templateUrl: "views/tasks.html",
+          controller: "TaskCtrl as tasks"
+        })
         .when ('/listing', {
           templateUrl: "views/map-listing.html",
-          controller: "MapCtrl"
+          controller: "MapCtrl as mapCtrl"
         })
         .otherwise({
           redirectTo: '/not-found'
