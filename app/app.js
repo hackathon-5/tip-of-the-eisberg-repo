@@ -33,5 +33,7 @@
 
 }(angular.module("hackathon5", [
     'ngRoute',
-    'uiGmapgoogle-maps'
+    'uiGmapgoogle-maps',
+    'ngAnimate',
+    'ngMaterial'
 ])));

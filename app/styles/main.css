@@ -1,5 +1,8 @@
 body {
-  position: relative; }
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  color: #4d4d4d;
+  font-size: 14px; }
 
 .angular-google-map-container {
   width: 100%;
@@ -19,7 +22,7 @@ body {
   max-width: 88%; }
 
 .bg-color-main {
-  background-color: #DF5A49; }
+  background-color: #866770; }
 
 .bg-white {
   background-color: white; }

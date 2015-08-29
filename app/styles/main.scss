@@ -3,11 +3,13 @@ $color-green: #45B29D;
 $bg-color-main: #DF5A49;
 
 body {
+  -webkit-font-smoothing: antialiased;
   position: relative;
+  color: lighten(black, 30%);
+  font-size: 14px;
 }
 
 /////COLORS
-
 $accent-green: #C1E8DA;
 $accent-light: #C96868;
 $brown: #5E4949;
@@ -34,7 +36,7 @@ $purple: #866770;
 }
 
 .bg-color-main {
-  background-color: $bg-color-main;
+  background-color: $purple;
 }
 
 .bg-white {
