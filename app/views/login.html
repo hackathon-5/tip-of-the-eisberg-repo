@@ -1,18 +1,2 @@
-<article class="products col-md-3" ng-repeat="products in main.allProducts">
-  <!-- <a href="#/detail/{{products._id}}"><img ng-src="{{products.photo}}" alt="{{products.name}}"></a>
-  <div class='info'>
-    <h3>{{products.name}}</h3>
-    <h5>{{products.price}}</h5> -->
-    <a class="indivLink" href="#/detail/{{products._id}}">
-    <prod-directive name='{{products.name}}' photo='{{products.photo}}' price='{{products.price}}'></prod-directive>
-    <div class="cartControl" ng-controller="CartCtrl as cart">
-      <a ng-click="cart.addCartProduct(products)"><i class="fa fa-cart-plus"></i></a>
-    </div>
-    </a>
-
-
-    <!-- <div class="cartControl" ng-controller="CartCtrl as cart">
-      <a ng-click="cart.addCartProduct(products)"><i class="fa fa-cart-plus"></i></a>
-    </div> -->
-  </div>
-</article>
+<h1>APP NAME</h1>
+<a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span>login</a>
