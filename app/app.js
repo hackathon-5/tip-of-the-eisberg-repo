@@ -6,6 +6,10 @@
           templateUrl: "views/login.html",
           controller: "LoginCtrl as login"
         })
+        .when('/your-location', {
+          templateUrl: "views/your-location.html",
+          controller: "yourLocationCtrl as yourLocation"
+        })
         .otherwise({
           redirectTo: '/not-found'
         });
