@@ -16,6 +16,7 @@ var morgan = require('morgan'),
 var Listing = require('./models/listing').Listing;
 var Task = require('./models/task').Task;
 var User = require('./models/user');
+var Review = require('./models/review').Review;
 
 
 // configuration
@@ -122,3 +123,15 @@ router.route('/users')
         }
       });
     })
+
+    // BADGE API ROUTES
+    router.route('/reviews')
+      .get(function(req, res) {
+        Review.find({}, function(err, data) {
+          if (err) {
+            res.send(err);
+          } else {
+            res.json(data);
+          }
+        });
+      })

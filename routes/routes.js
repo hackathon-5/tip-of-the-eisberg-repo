@@ -7,10 +7,6 @@ module.exports = function (app, passport) {
       res.render('index.ejs')
     });
 
-    app.get('/map', function(req, res){
-      res
-    })
-
     // LOGIN
     app.get('/login', function(req, res) {
       // render page and pass in flash data if it exists

@@ -10,7 +10,6 @@
       // returns list of tasks;
     };
 
-
     return {
       getTasks: getAllTasks
     };
