@@ -3,8 +3,8 @@
     app.config(function ($routeProvider) {
       $routeProvider
         .when('/', {
-          templateUrl: "common/views/login.html",
-          controller: "MainCtrl as main"
+          templateUrl: "views/login.html",
+          controller: "LoginCtrl as login"
         })
         .otherwise({
           redirectTo: '/not-found'

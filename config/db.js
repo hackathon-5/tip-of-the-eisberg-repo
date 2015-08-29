@@ -32,3 +32,7 @@ db.once('open', function (callback) {
 var listingSchema = mongoose.Schema({});
 
 exports.Listing = mongoose.model('Listing', listingSchema, 'listings');
+
+var taskSchema = mongoose.Schema({});
+
+exports.Task = mongoose.model('Task', taskSchema, 'tasks');
