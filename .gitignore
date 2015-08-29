@@ -3,7 +3,8 @@ public
 .tmp
 .sass-cache
 .idea
-client/bower_components
+app/bower_components
 dist
 /server/config/local.env.js
 npm-debug.log
+.DS_Store
