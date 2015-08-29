@@ -1,3 +1,10 @@
+$color-main: #3F00FF;
+$color-green: #45B29D;
+$bg-color-main: #DF5A49;
+
+body {
+  position: relative;
+}
 
 /////COLORS
 
@@ -8,21 +15,41 @@ $purple: #866770;
 
 .angular-google-map-container {
   width: 100%;
-  height: 100vh;
+  height: 80vh;
 }
 
-<<<<<<< HEAD
-   .marker-label {
-     color: red;
-     background-color: white;
-     font-family: "Lucida Grande", "Arial", sans-serif;
-     font-size: 10px;
-     font-weight: bold;
-     text-align: center;
-     width: 40px;     
-     border: 2px solid black;
-     white-space: nowrap;
-   }
+.marker-label {
+   color: red;
+   font-family: "Lucida Grande", "Arial", sans-serif;
+   font-size: 10px;
+   font-weight: bold;
+   text-align: center;
+   width: 40px;
+   border: 2px solid black;
+   white-space: nowrap;
+}
 
-   
+.container {
+  max-width: 88%;
+}
 
+.bg-color-main {
+  background-color: $bg-color-main;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+.mbs {
+  margin-bottom: 12px;
+}
+
+.color-green {
+  color: $color-green;
+}
+
+.barter-task {
+  text-align: center;
+  width: 20%;
+}
