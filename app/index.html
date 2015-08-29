@@ -20,13 +20,9 @@
 
   </head>
   <body>
-
-    <div ng-app="hackathon5">
-      <ng-view>
-      </ng-view>
-    </div>
-
-    <h1>Nucular</h1>
+      <section ng-app="hackathon5">
+        <ng-view></ng-view>
+      </section>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -39,8 +35,9 @@
 
     <!-- build:js app.js -->
     <script src="app.js"></script>
+    <script src="controllers/loginCtrl.js"></script>
     <script src="listings.service.js"></script>
+    <script src="controllers/listing.ctrl.js"></script>
     <!-- endbuild -->
-
 </body>
 </html>

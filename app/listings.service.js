@@ -8,7 +8,7 @@ angular.module('hackathon5')
         return $http.get( url );
       };
 
-      var getSinglListing = function(listingId) {
+      var getSingleListing = function(listingId) {
         return $http.get( url + '/listing/' + listingId );
       };
 
