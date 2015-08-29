@@ -27,8 +27,6 @@
         });
     });
 
-    // .constant('_', _); //infusing underscore library
-
     app.run(function ( ) {});
 
     app.controller('AppController', function ($scope) {
