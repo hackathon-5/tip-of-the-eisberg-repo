@@ -6,7 +6,8 @@
                    icon="'icon'"
                    options="markers.options"
                    click="onClick()"
-                   events="marker.events">
+                   events="markersEvents"
+                   ng-click="markersEvents()">
    <ui-gmap-window options="windowOptions" closeClick="closeWindow()">
    </ui-gmap-window>
   </ui-gmap-markers>
@@ -18,6 +19,10 @@
 
 <div class="container">
   <md-content class="md-padding bg-color-main">
+
+     <md-card class="md-card md-whiteframe-z2 bg-white" ng-repeat="listing in mapCtrl.listings" data-id="{{listing._id}}">
+       <md-card-content>
+         <h2 class="md-title" id="anchor">{{listing.Title}} <span class="price">${{listing.Price}} / night</span></h2>
      <md-card class="md-card md-whiteframe-z2 bg-white" ng-repeat="listing in mapCtrl.listings">
        <md-card-content data-id="{{listing._id}}">
          <md-card class="md-card">
