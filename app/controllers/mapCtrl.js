@@ -173,7 +173,7 @@
       $("html, body").animate({ scrollTop: "0px" });
     });
 
-    // SLIDE OUT HANDLEER
+    // SLIDE OUT HANDLER
     $('body').on('click', '.slide-out-toggler', function(e) {
       $('.slide-out').removeClass('open')
      $(e.currentTarget).parent('md-card').find('.slide-out').addClass('open');

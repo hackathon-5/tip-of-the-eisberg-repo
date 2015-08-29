@@ -1,4 +1,4 @@
-
+<!--
 <ui-gmap-google-map center='map.center' zoom='map.zoom' options="mapOptions" styles="options.styles">
   <ui-gmap-markers models="mapCtrl.listings"
                    idKey="_id"
@@ -10,41 +10,62 @@
    <ui-gmap-window options="windowOptions" closeClick="closeWindow()">
    </ui-gmap-window>
   </ui-gmap-markers>
-</ui-gmap-google-map>
+</ui-gmap-google-map> -->
 
 <md-button class="md-fab to-the-top-button">
     <i class="material-icons">keyboard_arrow_up</i>
 </md-button>
 
-<div class="">
+<div class="container">
   <md-content class="md-padding bg-color-main">
      <md-card class="md-card md-whiteframe-z2 bg-white" ng-repeat="listing in mapCtrl.listings">
-
        <md-card-content data-id="{{listing._id}}">
-         <h3 class="md-title">{{listing.Title}} <span class="price">${{listing.Price}} / night</span></h3>
+         <md-card class="md-card">
+           <img class="listing-photo" src="{{listing.imgUrl}}" alt="{{listing.ShortDesc}}" />
+         </md-card>
+         <h3 class="md-title"><a target="_blank" href="https://www.airbnb.com/rooms/{{listing.ListingID}}?s=zICD">{{listing.Title}}</a></h3>
+         <p ng-show="listing.Price != 'Not Found'">
+           Night: <span class="price">${{listing.Price}}</span>
+         </p>
          <p ng-show="listing.P_Weekly != 'Not Found'">
            Week: <span class="price">{{listing.P_Weekly}}</span>
          </p>
-         <p>
-           {{listing.S_PropType}} - {{listing.ShortDesc}}
-         </p>
-         <div class="barter-box">
-          <h4>Barters accepted:</h4>
-          <div layout="row" class="mbs">
-            <div class="barter-task" ng-repeat="task in mapCtrl.tasks" flex="20" ng-if="$index < 5">
-              <i class="material-icons color-green">done</i><br/><small>{{task.name}}</small>
-            </div>
-          </div>
-          <div layout="row">
-            <div class="barter-task" ng-repeat="task in mapCtrl.tasks" flex="20" ng-if="$index >= 5">
-              <i class="material-icons color-green">done</i><br/><small>{{task.name}}</small>
-            </div>
-          </div>
-         </div>
+         <md-tabs md-dynamic-height md-border-bottom>
+           <md-tab label="Bed">
+             <md-content class="md-padding">
+               <p>
+                 {{listing.S_PropType}} <span ng-if="listing.S_BedType != 'Not Found'">- {{listing.S_BedType}}</span>- {{listing.ShortDesc}}
+               </p>
+               <p>
+                 Accomodates {{listing.S_Accomodates}} person<span ng-if="listing.S_Accomodates > 1">s</span>
+               </p>
+               <p>
+                 {{listing.S_NumBeds}} beds total
+               </p>
+             </md-content>
+           </md-tab>
+
+           <md-tab label="Barter">
+             <md-content class="md-padding">
+               <div class="barter-box">
+                <h4>Barters accepted:</h4>
+                <div layout="row" class="mbs">
+                  <div class="barter-task" ng-repeat="task in mapCtrl.tasks" flex="20" ng-if="$index < 5">
+                    <i class="material-icons color-green">done</i><br/><small>{{task.name}}</small>
+                  </div>
+                </div>
+                <div layout="row">
+                  <div class="barter-task" ng-repeat="task in mapCtrl.tasks" flex="20" ng-if="$index >= 5">
+                    <i class="material-icons color-green">done</i><br/><small>{{task.name}}</small>
+                  </div>
+                </div>
+              </div>
+              </md-content>
+           </md-tab>
+         </md-tabs>
+
        </md-card-content>
-       <md-button class="slide-out-toggler">
-        Open reviews
-       </md-button>
+
          <md-card class="slide-out">
            <div class="close-button-wrapper">
              <md-button class="md-fab">
@@ -61,6 +82,9 @@
              </p>
            </div>
          </md-card>
+         <md-button class="md-raised teal slide-out-toggler">
+          Open reviews
+         </md-button>
      </md-card>
    </md-content>
 

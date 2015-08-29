@@ -2,18 +2,21 @@ $color-main: #3F00FF;
 $color-green: #45B29D;
 $bg-color-main: #DF5A49;
 
-body {
-  -webkit-font-smoothing: antialiased;
-  position: relative;
-  color: lighten(black, 40%);
-  font-size: 14px;
-}
-
 /////COLORS
 $accent-green: #C1E8DA;
 $accent-light: #B0DDD9;
 $brown: #5E4949;
 $purple: #866770;
+
+
+body {
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  color: lighten(black, 40%);
+  background-color: $purple;
+  font-size: 14px;
+}
+
 
 .angular-google-map-container {
   width: 100%;
@@ -74,6 +77,11 @@ a.md-button.md-fab, .md-button.md-fab {
 
 .container {
   max-width: 80%;
+  margin: 0 auto;
+}
+
+section {
+  background-color: $purple;
 }
 
 .price {
@@ -143,4 +151,48 @@ md-card.slide-out {
 
 .md-button.md-fab {
   padding-top: 6px;
+}
+md-tabs .md-tab.md-active, md-tabs .md-tab.md-focused {
+  color: black;
+}
+md-tabs md-ink-bar {
+  background-color: $accent-light;
+  color: $accent-light;
+}
+
+h3 {
+  a {
+    color: inherit;
+    position:relative;
+    text-decoration: none;
+    &:hover{
+      &:after{
+        transform: scaleX(1);
+      }
+    }
+    &:after{
+      content: " ";
+      background-color: $accent-light;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: transform .3s ease-out;
+    }
+  }
+}
+img {
+  max-width: 100%;
+
+}
+
+.listing-photo {
+  max-width: 80%;
+  display: inline-block;
+  margin: 0 auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
