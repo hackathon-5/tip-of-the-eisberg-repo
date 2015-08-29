@@ -19,9 +19,11 @@
     <!-- endbuild -->
 
   </head>
-  <body ng-app="hackathon5">
+  <body>
 
-    <h1>Nucular</h1>
+    <section ng-app="hackathon5">
+      <ng-view></ng-view>
+    </section>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -38,6 +40,7 @@
 
         <!-- build:js app.js -->
         <script src="app.js"></script>
+        <script src="controllers/loginCtrl.js"></script>
         <!-- endbuild -->
 </body>
 </html>
