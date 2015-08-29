@@ -2,8 +2,8 @@
 
 module.exports = function (app, passport) {
 
-    // HOME PAGE
-    app.get('/', function(req, res) {
+    //HOME PAGE
+    app.get('/fb', function(req, res) {
       res.render('index.ejs')
     });
 
