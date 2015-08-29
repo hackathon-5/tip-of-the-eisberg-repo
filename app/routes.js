@@ -1,6 +1,12 @@
 // routes.js
 
 module.exports = function (app, passport) {
+
+    // HOME PAGE
+    app.get('/', function(req, res) {
+      res.render('index.ejs')
+    });
+
     // LOGIN
     app.get('/login', function(req, res) {
       // render page and pass in flash data if it exists

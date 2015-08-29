@@ -16,6 +16,7 @@ var morgan = require('morgan'),
 var configDB = require('./config/database.js');
 
 var Listing = require('./db').Listing;
+var User = require('./models/user');
 
 
 // configuration
@@ -36,7 +37,6 @@ app.use(session({ secret: 'stuffandthings' }));      // Session secret - ?!
 app.use(passport.initialize());
 app.use(passport.session());                     // Allows for persistent login sessions
 app.use(flash())                                 // Use connect-flash for flash messages stored in session
-app.use(express.static('app'));
 
 // Load in routes
 require('./app/routes.js')(app, passport);     // Load our routes and pass in our app and fully configured passport
@@ -97,4 +97,16 @@ router.route('/listings/:listing_id')
   })
   .delete(function(req, res) {
     // STUBBED
+  })
+
+// BADGE API ROUTES
+router.route('/users')
+  .get(function(req, res) {
+    User.find({}, function(err, data) {
+      if (err) {
+        res.send(err);
+      } else {
+        res.json(data);
+      }
+    });
   })
