@@ -1,6 +1,6 @@
 (function () {
   angular.module("hackathon5")
-    .controller("MapCtrl", function ($scope, ListingService) {
+    .controller("MapCtrl", function ($scope, ListingService, TaskService) {
 
     var mapCtrl = this;
 
@@ -13,7 +13,10 @@
         }
         mapCtrl.listings[i].id = mapCtrl.listings[i]._id;
       }
-      console.log(mapCtrl.listings);
+    });
+
+    TaskService.getAllTasks().success(function(data) {
+      mapCtrl.tasks = data;
     });
 
     $scope.map = {
@@ -23,6 +26,15 @@
         },
         zoom: 13
     };
+
+    $scope.markers = {
+      options: {
+        icon:'../images/location-marker.png',
+
+      }
+    }
+
+
     $scope.mapOptions = {
       scrollwheel: false
     }
