@@ -6,6 +6,10 @@
           templateUrl: "views/login.html",
           controller: "LoginCtrl as login"
         })
+        .when('/your-location', {
+          templateUrl: "views/your-location.html",
+          controller: "yourLocationCtrl as yourLocation"
+        })
         .when ('/listing', {
           templateUrl: "views/map-listing.html",
           controller: "MapCtrl as mapCtrl"
