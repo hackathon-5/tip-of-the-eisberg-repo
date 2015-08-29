@@ -13,9 +13,7 @@ var morgan = require('morgan'),
     bodyParser = require('body-parser'),
     session = require('express-session');
 
-var configDB = require('./config/database.js');
-
-var Listing = require('./db').Listing;
+var Listing = require('./models/listing').Listing;
 var User = require('./models/user');
 
 
@@ -39,7 +37,7 @@ app.use(passport.session());                     // Allows for persistent login 
 app.use(flash())                                 // Use connect-flash for flash messages stored in session
 
 // Load in routes
-require('./app/routes.js')(app, passport);     // Load our routes and pass in our app and fully configured passport
+require('./routes/routes.js')(app, passport);     // Load our routes and pass in our app and fully configured passport
 
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
