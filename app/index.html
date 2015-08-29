@@ -19,7 +19,12 @@
     <!-- endbuild -->
 
   </head>
-  <body ng-app="hackathon5">
+  <body>
+
+    <div ng-app="hackathon5">
+      <ng-view>
+      </ng-view>
+    </div>
 
     <h1>Nucular</h1>
 
@@ -32,8 +37,10 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js app.js -->
-        <script src="app.js"></script>
-        <!-- endbuild -->
+    <!-- build:js app.js -->
+    <script src="app.js"></script>
+    <script src="listings.service.js"></script>
+    <!-- endbuild -->
+
 </body>
 </html>
