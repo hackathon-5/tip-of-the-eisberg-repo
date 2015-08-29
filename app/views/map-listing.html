@@ -9,5 +9,33 @@
    <ui-gmap-window options="windowOptions" closeClick="closeWindow()">
    </ui-gmap-window>
   </ui-gmap-markers>
-
 </ui-gmap-google-map>
+
+<div class="bg-color-main">
+  <md-content class="md-padding">
+     <md-card class="md-card md-whiteframe-z2 bg-white" ng-repeat="listing in mapCtrl.listings">
+       <md-card-content>
+         <h2 class="md-title">{{listing.Title}} <span class="price">${{listing.Price}} / night</span></h2>
+         <p ng-show="listing.P_Weekly != 'Not Found'">
+           Week: <span>{{listing.P_Weekly}}</span>
+         </p>
+         <p>
+           {{listing.S_PropType}} - {{listing.ShortDesc}}
+         </p>
+         <div class="barter-box">
+          <h3>Barters accepted:</h3>
+          <div layout="row" class="mbs">
+            <div class="barter-task" ng-repeat="task in mapCtrl.tasks" flex="20" ng-if="$index < 5">
+              <i class="material-icons color-green">done</i><br/><small>{{task.name}}</small>
+            </div>
+          </div>
+          <div layout="row">
+            <div class="barter-task" ng-repeat="task in mapCtrl.tasks" flex="20" ng-if="$index >= 5">
+              <i class="material-icons color-green">done</i><br/><small>{{task.name}}</small>
+            </div>
+          </div>
+         </div>
+       </md-card-content>
+     </md-card>
+   </md-content>
+</div>
