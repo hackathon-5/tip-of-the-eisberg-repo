@@ -37,6 +37,7 @@ app.use(session({ secret: 'stuffandthings' }));      // Session secret - ?!
 app.use(passport.initialize());
 app.use(passport.session());                     // Allows for persistent login sessions
 app.use(flash())                                 // Use connect-flash for flash messages stored in session
+app.use(express.static('app'));
 
 // Load in routes
 require('./app/routes.js')(app, passport);     // Load our routes and pass in our app and fully configured passport
