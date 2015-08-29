@@ -1,14 +1,12 @@
 
-<ui-gmap-google-map center='map.center' zoom='map.zoom' options="mapOptions">
+<ui-gmap-google-map center='map.center' zoom='map.zoom' options="mapOptions" styles="options.styles">
   <ui-gmap-markers models="mapCtrl.listings"
                    doClust="true"
                    coords="'coords'"
                    icon="'icon'"
-                   options="markerOptions"
+                   options="markers.options"
                    click="onClick()"
                    events="marker.events">
    <ui-gmap-window options="windowOptions" closeClick="closeWindow()">
    </ui-gmap-window>
   </ui-gmap-markers>
-
-</ui-gmap-google-map>

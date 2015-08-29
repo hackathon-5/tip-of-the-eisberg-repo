@@ -23,6 +23,15 @@
         },
         zoom: 13
     };
+
+    $scope.markers = {
+      options: {
+        icon:'../images/location-marker.png',
+
+      }
+    }
+
+
     $scope.mapOptions = {
       scrollwheel: false
     }
